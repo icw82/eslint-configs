@@ -3,18 +3,22 @@
     "version": "0.1.0",
     "description": "Конфигурации ESLint",
     "type": "module",
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "build": "rimraf ./dist && tsc",
         "lint": "eslint --flag unstable_native_nodejs_ts_config",
-        "prepublishOnly": "npm run test && npm run lint",
-        "validate": "ts-node dist/tests/validate.mjs",
-        "postbuild": "npm run validate"
+        "prepublishOnly": "npm run test",
+        "test": "ts-node dist/tests/validate.mjs",
+        "postbuild": "npm run test"
     },
     "engines": {
         "node": ">= 24.5.0"
     },
     "files": [
-        "dist"
+        "dist",
+        "!dist/tests"
     ],
     "exports": {
         ".": {
