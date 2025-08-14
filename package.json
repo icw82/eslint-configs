@@ -1,0 +1,59 @@
+{
+    "name": "@icw82/eslint-configs",
+    "version": "0.1.0",
+    "description": "Конфигурации ESLint",
+    "type": "module",
+    "scripts": {
+        "build": "rimraf ./dist && tsc",
+        "lint": "eslint --flag unstable_native_nodejs_ts_config",
+        "prepublishOnly": "npm run test && npm run lint",
+        "validate": "ts-node dist/tests/validate.mjs",
+        "postbuild": "npm run validate"
+    },
+    "engines": {
+        "node": ">= 24.5.0"
+    },
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
+        },
+        "./base": "./dist/base.mjs",
+        "./stylistic": "./dist/stylistic.mjs",
+        "./typescript": "./dist/typescript.mjs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/icw82/eslint-configs.git"
+    },
+    "keywords": [
+        "eslint",
+        "stylelint"
+    ],
+    "author": "icw82",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/icw82/eslint-configs/issues"
+    },
+    "homepage": "https://github.com/icw82/eslint-configs#readme",
+    "peerDependencies": {
+        "@stylistic/eslint-plugin": "^5.2.3",
+        "eslint": "^9.33.0",
+        "typescript": ">=5.9.2",
+        "typescript-eslint": "^8.39.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.33.0",
+        "@stylistic/eslint-plugin": "^5.2.3",
+        "@types/node": "^24.2.1",
+        "eslint": "^9.33.0",
+        "rimraf": "^6.0.1",
+        "ts-node": "^10.9.2",
+        "tslib": "^2.8.1",
+        "typescript": "^5.9.2",
+        "typescript-eslint": "^8.39.0"
+    }
+}

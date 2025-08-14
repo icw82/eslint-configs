@@ -1,0 +1,10 @@
+{
+    "editor.codeActionsOnSave": {
+        // "source.fixAll.eslint": "explicit"
+    },
+    "editor.rulers": [
+        79,
+        100
+    ],
+    "eslint.useESLintClass": true
+}
