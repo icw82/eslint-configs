@@ -167,17 +167,18 @@ const rules: Partial<ESLintRules> = {
     radix: 'error',
     'no-throw-literal': 'error',
     'spaced-comment': 'warn',
-
-    '@typescript-eslint/explicit-function-return-type': 'off',
+    'no-console': [
+        'error',
+        { allow: ['warn', 'error'] },
+    ],
 };
 
 const config: Linter.Config = {
     name: CONFIG_NAME_PREFIX + 'base',
     languageOptions: {
-        // ecmaVersion: 'latest',
-        // sourceType: 'module',
         globals: {
             ...globals.browser,
+            ...globals.node,
         },
     },
     rules,

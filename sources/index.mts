@@ -5,30 +5,25 @@ import base from './base.mjs';
 import stylistic from './stylistic.mjs';
 import typescript from './typescript.mjs';
 
+const config = tseslint.config([
+    {
+        files: [
+            '**/*.{js,mjs,ts,mts,jsx,tsx}',
+        ],
+    },
+    {
+        ignores: [
+            'node_modules',
+            '**/dist/**',
+            '**/build/**',
+            '**/coverage/**',
+        ],
+    },
+    base,
+    stylistic,
+    ...typescript,
+]) as unknown as Linter.Config[];
 
-const config = tseslint.config({
-    files: [
-        '**/*.js',
-        '**/*.jsx',
-        '**/*.mjs',
-
-        '**/*.ts',
-        '**/*.tsx',
-        '**/*.mts',
-    ],
-    // languageOptions: {
-    //     parserOptions: {
-    //         projectService: true,
-    //         tsconfigRootDir: import.meta.dirname,
-    //     },
-    // },
-}, {
-    'extends': [
-        base,
-        stylistic,
-        ...typescript,
-    ],
-}) as unknown as Linter.Config[];
 
 export {
     base,

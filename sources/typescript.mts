@@ -136,7 +136,11 @@ const config: Config = {
     languageOptions: {
         parser: tseslint.parser,
         parserOptions: {
-            projectService: true,
+            projectService: {
+                allowDefaultProject: [
+                    '../*.{js,mjs,ts,mts,jsx,tsx}',
+                ],
+            },
             tsconfigRootDir: import.meta.dirname,
         },
     },
