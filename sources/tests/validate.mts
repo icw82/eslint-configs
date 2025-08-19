@@ -17,8 +17,8 @@ async function main(): Promise<void> {
     const rulesIds = new Set(messages.map((m): string => m.ruleId || ''));
 
     const expectedRulesIds = [
-        'quotes',
-        'space-infix-ops',
+        '@stylistic/quotes',
+        '@stylistic/space-infix-ops',
         '@stylistic/semi',
         '@typescript-eslint/no-unused-vars',
     ];
