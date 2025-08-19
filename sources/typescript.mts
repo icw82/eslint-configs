@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-
 import type { Linter } from 'eslint';
 import tseslint from 'typescript-eslint';
 import type { TSESLint } from '@typescript-eslint/utils';
@@ -131,6 +130,8 @@ const rules: Config['rules'] = {
     ],
 };
 
+const tsconfigRootDir = process.cwd();
+
 const config: Config = {
     name: CONFIG_NAME_PREFIX + 'typescript',
     languageOptions: {
@@ -138,14 +139,11 @@ const config: Config = {
         parserOptions: {
             projectService: {
                 allowDefaultProject: [
-                    '../*.{js,mjs,ts,mts,jsx,tsx}',
+                    '*.{js,mjs,ts,mts,jsx,tsx}',
                 ],
             },
-            tsconfigRootDir: import.meta.dirname,
+            tsconfigRootDir,
         },
-    },
-    plugins: {
-        '@typescript-eslint': tseslint.plugin,
     },
     rules,
 };

@@ -29,6 +29,9 @@ npm run build
 
 # Просмотр конечного содержимого пакета
 npm pack --dry-run
+
+# Инспекция конфигурации
+npx eslint --inspect-config
 ```
 
 ### Публикация вручную

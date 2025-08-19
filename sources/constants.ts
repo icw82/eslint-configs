@@ -1,1 +1,1 @@
-export const CONFIG_NAME_PREFIX = process.env.npm_package_name + '/';
+export const CONFIG_NAME_PREFIX = '@icw82/eslint-configs/';
