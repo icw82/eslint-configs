@@ -148,6 +148,7 @@ const config: Config = {
     rules,
 };
 
+
 export default tseslint.config(
     ...tseslint.configs.recommendedTypeChecked,
     config,

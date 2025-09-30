@@ -41,6 +41,21 @@ const rules: Partial<ESLintRules> = {
         },
     ],
     'no-nested-ternary': 'error',
+    'no-restricted-syntax': [
+        'warn',
+        {
+            selector: ':not(MethodDefinition) > FunctionExpression',
+            message: 'Функциональное выражение запрещено',
+        },
+        {
+            selector: 'FunctionDeclaration',
+            message: 'Объявление функции запрещено, используйте стрелочные функции',
+        },
+        {
+            selector: 'MethodDefinition[static=true]',
+            message: 'Статические методы запрещены',
+        },
+    ],
     'no-return-assign': 'error',
     'no-setter-return': 'error',
     'no-shadow': 'warn',

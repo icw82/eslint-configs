@@ -1,7 +1,7 @@
 import { ESLint } from 'eslint';
 
 
-async function main(): Promise<void> {
+const main = async (): Promise<void> => {
     const eslint = new ESLint();
 
     const [ result ] = await eslint.lintFiles('./sources/tests/code.ts');
@@ -16,15 +16,20 @@ async function main(): Promise<void> {
 
     const rulesIds = new Set(messages.map((m): string => m.ruleId || ''));
 
-    const expectedRulesIds = [
+    const expectedRulesIds = new Set([
+        'no-restricted-syntax',
         '@stylistic/quotes',
         '@stylistic/space-infix-ops',
         '@stylistic/semi',
         '@typescript-eslint/no-unused-vars',
-    ];
+    ]);
 
     expectedRulesIds.forEach((id): void => {
-        if (rulesIds.has(id)) return;
+        if (rulesIds.has(id)) {
+            rulesIds.delete(id);
+
+            return;
+        }
 
         console.error(
             `Ожидалось сообщение об ошибке по правилу ${id}, но получены:`,
@@ -33,7 +38,11 @@ async function main(): Promise<void> {
 
         process.exit(1);
     });
-}
+
+    if (rulesIds.size > 0) {
+        console.error('Линтер обнаружил неожидаемые ошибки:', rulesIds);
+    }
+};
 
 main().catch((e): void => {
     console.error('Smoke-тест провален:', e);
