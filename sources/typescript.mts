@@ -113,7 +113,7 @@ const rules: Config['rules'] = {
         'error',
         {
             allowExpressions: true,
-            allowTypedFunctionExpressions: false,
+            allowTypedFunctionExpressions: true,
         },
     ],
     '@typescript-eslint/array-type': [

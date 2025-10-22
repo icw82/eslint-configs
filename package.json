@@ -1,6 +1,6 @@
 {
     "name": "@icw82/eslint-configs",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "Конфигурации ESLint",
     "type": "module",
     "publishConfig": {
