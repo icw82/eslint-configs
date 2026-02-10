@@ -45,7 +45,7 @@ const stylisticRules: StylisticRules = {
         'error',
         'consistent-as-needed',
         {
-            keywords: true,
+            keywords: false,
         },
     ],
     '@stylistic/max-len': [

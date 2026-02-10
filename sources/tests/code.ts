@@ -15,3 +15,7 @@ export class MyClass {
 
     static method(): void {}
 }
+
+export interface Test {
+    delete(key: number): void;
+}
