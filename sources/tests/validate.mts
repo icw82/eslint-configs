@@ -17,11 +17,13 @@ const main = async (): Promise<void> => {
     const rulesIds = new Set(messages.map((m): string => m.ruleId || ''));
 
     const expectedRulesIds = new Set([
-        'no-restricted-syntax',
+        '@stylistic/quote-props',
         '@stylistic/quotes',
-        '@stylistic/space-infix-ops',
         '@stylistic/semi',
-        '@typescript-eslint/no-unused-vars',
+        '@stylistic/space-infix-ops',
+        '@typescript-eslint/naming-convention',
+        '@typescript-eslint/no-empty-object-type',
+        'no-restricted-syntax',
     ]);
 
     expectedRulesIds.forEach((id): void => {

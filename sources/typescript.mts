@@ -12,13 +12,6 @@ const rules: Config['rules'] = {
     '@typescript-eslint/no-non-null-assertion': 'error',
     '@typescript-eslint/naming-convention': [
         'error', {
-        //     selector: 'import',
-        //     format: ['camelCase', 'PascalCase'],
-        // }, {
-        //     selector: 'variableLike',
-        //     format: ['strictCamelCase', 'StrictPascalCase', 'UPPER_CASE' ],
-        //     // leadingUnderscore: 'allow',
-        // }, {
             selector: 'variable',
             format: ['camelCase', 'UPPER_CASE'],
             leadingUnderscore: 'allow',
@@ -27,27 +20,24 @@ const rules: Config['rules'] = {
             modifiers: ['const'],
             types: ['function'],
             format: ['strictCamelCase', 'StrictPascalCase'],
-            // leadingUnderscore: 'allow',
         }, {
             selector: 'variable',
             modifiers: ['exported'],
             types: ['function'],
             format: ['strictCamelCase', 'StrictPascalCase'],
-            // leadingUnderscore: 'allow',
         }, {
             selector: 'variable',
             modifiers: ['const'],
             types: ['array', 'boolean', 'number', 'string'],
             format: ['strictCamelCase', 'UPPER_CASE'],
-            // leadingUnderscore: 'allow',
-        // }, {
-        //     selector: 'variable',
-        //     types: ['array', 'number', 'string'],
-        //     format: null,
-        //     custom: {
-        //         regex: '^(?!is|should|has|can|did|will)[a-z]+[A-Z]',
-        //         match: true,
-        //     }
+        }, {
+            // Деструктурированные переменные могут приходить из внешних API
+            selector: 'variable',
+            modifiers: ['destructured'],
+            format: null,
+        }, {
+            selector: 'import',
+            format: ['camelCase', 'PascalCase'],
         }, {
             selector: 'function',
             format: ['strictCamelCase', 'StrictPascalCase'],
@@ -55,8 +45,25 @@ const rules: Config['rules'] = {
             selector: 'typeLike',
             format: ['StrictPascalCase'],
         }, {
+            selector: 'typeParameter',
+            format: ['PascalCase'],
+        }, {
             selector: 'memberLike',
             format: ['strictCamelCase', 'UPPER_CASE'],
+        }, {
+            // Свойства, требующие кавычек, не проверяются
+            selector: [
+                'classProperty',
+                'objectLiteralProperty',
+                'typeProperty',
+                'classMethod',
+                'objectLiteralMethod',
+                'typeMethod',
+                'accessor',
+                'enumMember',
+            ],
+            modifiers: ['requiresQuotes'],
+            format: null,
         }, {
             selector: 'enum',
             format: ['StrictPascalCase', 'UPPER_CASE'],
