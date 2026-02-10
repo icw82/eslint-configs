@@ -1,5 +1,7 @@
 # Конфигурации линтеров
 
+[![npm version](https://img.shields.io/npm/v/@icw82/eslint-configs.svg)](https://www.npmjs.com/package/@icw82/eslint-configs)
+
 ## Установка
 
 ```sh
@@ -37,14 +39,14 @@ npx eslint --inspect-config
 ### Публикация вручную
 
 ```sh
+# Текущий реестр пакетов. Должен быть https://registry.npmjs.org/
+npm config get registry
+
 # Авторизация
 npm login
 
 # Текущий логин
 npm whoami
-
-# Текущий реестр пакетов. Должен быть https://registry.npmjs.org/
-npm config get registry
 
 # Публикация
 npm publish --access public
