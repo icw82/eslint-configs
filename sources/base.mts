@@ -14,7 +14,7 @@ const rules: Partial<ESLintRules> = {
     'block-scoped-var': 'error',
     'class-methods-use-this': 'warn',
     'complexity': [ 'warn', { max: 10 } ],
-    'eqeqeq': ['error', 'smart'],
+    'eqeqeq': ['error', 'always'],
     'getter-return': 'error',
     'id-denylist': [ 'error', 'boolean', 'number', 'string', 'undefined'],
     'max-depth': [ 'warn', { max: 4 } ],

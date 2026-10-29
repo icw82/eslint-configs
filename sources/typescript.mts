@@ -66,10 +66,10 @@ const rules: Config['rules'] = {
             format: null,
         }, {
             selector: 'enum',
-            format: ['StrictPascalCase', 'UPPER_CASE'],
+            format: ['UPPER_CASE'],
         }, {
             selector: 'enumMember',
-            format: ['StrictPascalCase', 'UPPER_CASE'],
+            format: ['UPPER_CASE'],
         }, {
             selector: 'memberLike',
             modifiers: ['private'],
@@ -86,6 +86,7 @@ const rules: Config['rules'] = {
         },
     ],
     '@typescript-eslint/no-floating-promises': 'error',
+    '@typescript-eslint/no-deprecated': 'warn',
     '@typescript-eslint/explicit-member-accessibility': [
         'error',
         {

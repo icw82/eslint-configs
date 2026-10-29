@@ -17,12 +17,15 @@ const main = async (): Promise<void> => {
     const rulesIds = new Set(messages.map((m): string => m.ruleId || ''));
 
     const expectedRulesIds = new Set([
+        '@stylistic/max-len',
         '@stylistic/quote-props',
         '@stylistic/quotes',
         '@stylistic/semi',
         '@stylistic/space-infix-ops',
         '@typescript-eslint/naming-convention',
+        '@typescript-eslint/no-deprecated',
         '@typescript-eslint/no-empty-object-type',
+        'eqeqeq',
         'no-restricted-syntax',
     ]);
 

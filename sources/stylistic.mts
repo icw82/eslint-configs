@@ -49,7 +49,7 @@ const stylisticRules: StylisticRules = {
         },
     ],
     '@stylistic/max-len': [
-        'warn',
+        'error',
         {
             code: 79,
             ignoreStrings: true,

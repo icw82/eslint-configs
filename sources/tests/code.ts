@@ -69,8 +69,21 @@ const { some_external_value, AnotherValue } = JSON.parse('{}');
 type Container<Value> = { value: Value; };
 type BadContainer<value> = { value: value; }; // ❌
 
-// Enum и объекты
+// Enum и объекты: имя и члены enum — только UPPER_CASE
 enum invalid_enum {} // ❌
+enum PascalEnum { First } // ❌
+enum VALID_ENUM { FIRST } // ✅
+
+// Строгое равенство всегда, в том числе с null
+export const isMissing = (value: unknown): boolean => value == null; // ❌
+
+// Устаревший API
+/** @deprecated Используйте isMissing */
+const isAbsent = isMissing;
+
+export const absent = isAbsent(0); // ⚠️
+
+// Длина строки — до 79 символов, комментарии тоже: эта строка длиннее лимита // ❌
 const obj = {
     Invalid_Prop: 1, // ❌
     'Invalid_Quoted_Prop': 2, // ❌ (валидный идентификатор — кавычки не спасают)
