@@ -1,9 +1,9 @@
 import type { Linter } from 'eslint';
 import tseslint from 'typescript-eslint';
 
-import base from './base.mjs';
-import stylistic from './stylistic.mjs';
-import typescript from './typescript.mjs';
+import base from './base.mts';
+import stylistic from './stylistic.mts';
+import typescript from './typescript.mts';
 
 const config = tseslint.config([
     {

@@ -4,7 +4,7 @@ import globals from 'globals';
 import { Linter } from 'eslint';
 import type { ESLintRules } from 'eslint/rules';
 
-import { CONFIG_NAME_PREFIX } from './constants.js';
+import { CONFIG_NAME_PREFIX } from './constants.ts';
 
 
 const rules: Partial<ESLintRules> = {

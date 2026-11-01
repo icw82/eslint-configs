@@ -13,6 +13,10 @@
         "verbatimModuleSyntax": true,
         "moduleDetection": "force",
 
+        // eslint.config.mts выполняет исходники в Node без сборки
+        "rewriteRelativeImportExtensions": true,
+        "erasableSyntaxOnly": true,
+
         "resolveJsonModule": true,
         "isolatedModules": true,
         "skipLibCheck": true,

@@ -2,7 +2,7 @@ import type { Linter } from 'eslint';
 import tseslint from 'typescript-eslint';
 import type { TSESLint } from '@typescript-eslint/utils';
 
-import { CONFIG_NAME_PREFIX } from './constants.js';
+import { CONFIG_NAME_PREFIX } from './constants.ts';
 
 
 type Config = TSESLint.FlatConfig.Config;

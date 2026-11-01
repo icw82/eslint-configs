@@ -3,7 +3,7 @@
 import { Linter } from 'eslint';
 import stylistic, { type RuleOptions } from '@stylistic/eslint-plugin';
 
-import { CONFIG_NAME_PREFIX } from './constants.js';
+import { CONFIG_NAME_PREFIX } from './constants.ts';
 
 
 type StylisticRules = {
