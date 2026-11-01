@@ -6,5 +6,8 @@
         79,
         100
     ],
-    "eslint.useESLintClass": true
+    "eslint.useESLintClass": true,
+    "eslint.options": {
+        "flags": ["unstable_native_nodejs_ts_config"]
+    }
 }

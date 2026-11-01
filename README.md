@@ -32,8 +32,11 @@ npm run build
 # Просмотр конечного содержимого пакета
 npm pack --dry-run
 
+# Линтинг по исходникам, без сборки
+npm run lint
+
 # Инспекция конфигурации
-npx eslint --inspect-config
+npx eslint --flag unstable_native_nodejs_ts_config --inspect-config
 ```
 
 ### Публикация вручную
