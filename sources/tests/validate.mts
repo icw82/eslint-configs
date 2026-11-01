@@ -46,6 +46,8 @@ const main = async (): Promise<void> => {
 
     if (rulesIds.size > 0) {
         console.error('Линтер обнаружил неожидаемые ошибки:', rulesIds);
+
+        process.exit(1);
     }
 };
 
