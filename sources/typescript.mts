@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import type { Linter } from 'eslint';
 import tseslint from 'typescript-eslint';
 import type { TSESLint } from '@typescript-eslint/utils';
@@ -127,7 +126,7 @@ const rules: Config['rules'] = {
     '@typescript-eslint/array-type': [
         'error',
         {
-            'default': 'array',
+            default: 'array',
         },
     ],
     '@typescript-eslint/no-inferrable-types': [
