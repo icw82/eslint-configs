@@ -1,8 +1,14 @@
 import { ESLint } from 'eslint';
 
+import { config } from '../index.mts';
+
 
 const main = async (): Promise<void> => {
-    const eslint = new ESLint();
+    // Проверяется собранный конфиг, а не eslint.config.mts репозитория
+    const eslint = new ESLint({
+        overrideConfigFile: true,
+        overrideConfig: config,
+    });
 
     const [ result ] = await eslint.lintFiles('./sources/tests/code.ts');
 
