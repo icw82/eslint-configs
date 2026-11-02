@@ -1,13 +1,11 @@
 import type { Linter } from 'eslint';
+import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
-import type { TSESLint } from '@typescript-eslint/utils';
 
 import { CONFIG_NAME_PREFIX } from './constants.ts';
 
 
-type Config = TSESLint.FlatConfig.Config;
-
-const rules: Config['rules'] = {
+const rules: Linter.RulesRecord = {
     '@typescript-eslint/no-non-null-assertion': 'error',
     '@typescript-eslint/naming-convention': [
         'error', {
@@ -139,7 +137,7 @@ const rules: Config['rules'] = {
 
 const tsconfigRootDir = process.cwd();
 
-const config: Config = {
+const config: Linter.Config = {
     name: CONFIG_NAME_PREFIX + 'typescript',
     languageOptions: {
         parser: tseslint.parser,
@@ -156,7 +154,10 @@ const config: Config = {
 };
 
 
-export default tseslint.config(
-    ...tseslint.configs.recommendedTypeChecked,
+const typescript: Linter.Config[] = defineConfig(
+    tseslint.configs.recommendedTypeChecked,
     config,
-) as unknown as Linter.Config[];
+);
+
+
+export default typescript;
